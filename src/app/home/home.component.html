@@ -1,0 +1,48 @@
+<div class="container-fluid">
+    <div class="row" >
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+            <div class="search-hero">
+                <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="&#61442;  Search Items">
+              </div>
+             
+            
+            <ol style="text-align: center;">
+                <li *ngFor="let item of items | filter:searchText"> 
+                    <div class="card" style="border: none;">
+                        <div class="card-body" style="border: none;">
+                            <table class="table table-light">
+                                <tr>
+                                    <td style="text-align: center;">
+                                       <h3 style="color: darkblue;">{{item.pName}}</h3>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: center;">
+                                      <h4>{{item.price}}</h4>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: center;"> 
+                                        <input type="button" value="buy" class="btn btn-success" (click)="proceedtobuy(item)">
+                                    </td>
+                                </tr>
+                            </table>
+                            
+                            
+                            
+                        </div>
+                        </div>
+                </li>
+               </ol>
+            
+                    
+                        
+                 
+            
+            
+        </div>
+        <div class="col-md-1"></div>
+        
+    </div>
+</div>

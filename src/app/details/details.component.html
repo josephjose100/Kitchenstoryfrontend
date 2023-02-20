@@ -1,0 +1,106 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            
+            <div class="card">
+                <div class="card-header"> <h1>Purchase Details</h1></div>
+                    <div class="card-body">
+
+                        <form #frmDetails="ngForm">
+                        
+
+
+                           
+                                       <h3 style="color: darkblue;">{{item.pName}}</h3> 
+                                    
+                                       <h3 style="color: darkblue;">Price:{{item.price}}/kg</h3> 
+                                   
+                                     Quantity:<input type="number" class="form-control" name="qty" [(ngModel)]="quantity" #qty="ngModel" required/> 
+                                     <br/>
+                                     <span class="error" *ngIf="qty.touched && qty.invalid">
+                                      Quantity shouldnot be blank
+                                  </span>
+                                     <h6>{{message}}</h6>
+                                     <br/>
+                                  
+                                        <input type="button" value="Get total Amount" class="btn btn-danger" (click)="total()" />
+                                  
+                                       <h3 style="color: darkred;">Price:{{amount}}</h3> 
+                              
+
+
+                                House no
+                               
+                                <input type="text" name="house" class="form-control" [(ngModel)]="houseno" #uname="ngModel" minlength="3" required/>
+                               <br/>
+                               <span class="error" *ngIf="uname.touched && uname.invalid">
+                                Username shouldnot be blank
+                            </span>
+                               <br/>
+                            
+                                    
+                            
+                           
+                                 Location
+                              
+                                 <input type="text" name="location" class="form-control" [(ngModel)]="location" #loc="ngModel" required/>
+                                 <br/>
+                                 <span class="error" *ngIf="loc.touched && loc.invalid">
+                                  Location shouldnot be blank
+                              </span>
+                                 <br/>
+                               
+                                 District
+                               
+                                 <input type="text" name="district" class="form-control" [(ngModel)]="district" #dis="ngModel" required/>
+                                 <br/>
+                                 <span class="error" *ngIf="dis.touched && dis.invalid">
+                                  District shouldnot be blank
+                              </span>
+                                 <br/>
+                                 State
+                               
+                                 <input type="text" name="state" class="form-control" [(ngModel)]="state" #sta="ngModel" required/>
+                                 <br/>
+                                 <span class="error" *ngIf="sta.touched && sta.invalid">
+                                  State shouldnot be blank
+                              </span>
+                                 <br/>
+                                 Pincode
+                               
+                                 <input type="text" name="pincode" class="form-control" [(ngModel)]="pincode" #pin="ngModel" required/>
+                                 <br/>
+                                 <span class="error" *ngIf="pin.touched && pin.invalid">
+                                  Pincode shouldnot be blank
+                              </span>
+                                 <br/>
+                                 Phone number
+                                
+                                 <input type="text" name="phonenumber" class="form-control" minlength="10" [(ngModel)]="phone" #ph="ngModel" />
+                                 <br/>
+                                 <span class="error" *ngIf="ph.touched && ph.invalid">
+                                  Phone number should be 10 digits
+                              </span>
+                                 <br/>
+                                 Email
+                                
+                                 <input type="email" name="email" class="form-control" [(ngModel)]="email" #mail="ngModel" required/>
+                                
+                                 <br/>
+                                 <span class="error" *ngIf="mail.touched && mail.invalid">
+                                  Email shouldnot be blank
+                              </span>
+                                 <br/>
+                                 <input type="submit" value="Proceed to pay" class="btn btn-danger" (click)="proceed(frmDetails)"/>
+                                
+                                
+                            >
+                    </form>
+                    </div>
+                
+            </div>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+</div>
