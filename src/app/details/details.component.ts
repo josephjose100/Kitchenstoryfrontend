@@ -17,7 +17,7 @@ export class DetailsComponent implements OnInit {
   amount:number;
   houseno:string="";
   location:string="";
-  district:String="";
+  district:string="";
   state:string="";
   pincode:string="";
   phone:string="";
@@ -32,11 +32,34 @@ export class DetailsComponent implements OnInit {
     if(this.quantity>0)
     this.amount=this.item.price*this.quantity;
     else
-    this.message="Quantity should be greater than 0";
+    alert("The quantity should be greater than zero");
   }
   
   proceed(form:any)
   {
+     if(form.valid)
+     {
+      if(this.quantity>0)
+      {
+         this.purchaseserice.setamount(this.amount);
+         this.purchaseserice.sethouseno(this.houseno);
+         this.purchaseserice.setlocation(this.location);
+         this.purchaseserice.setdistrict(this.district);
+         this.purchaseserice.setstate(this.state);
+         this.purchaseserice.setpincode(this.pincode);
+         this.purchaseserice.setphone(this.phone);
+         this.purchaseserice.setemail(this.email);
+         this.purchaseserice.setquantity(this.quantity);
+         this.router.navigate([`payment`]);
+
+      }
+      else
+      {
+        alert("The quantity should be greater than zero");
+      }
+     }
+
+
 
   }
 

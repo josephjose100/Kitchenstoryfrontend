@@ -77,7 +77,7 @@
                                  <br/>
                                  Phone number
                                 
-                                 <input type="text" name="phonenumber" class="form-control" minlength="10" [(ngModel)]="phone" #ph="ngModel" />
+                                 <input type="text" name="phonenumber" class="form-control" minlength="10" [(ngModel)]="phone" #ph="ngModel" required/>
                                  <br/>
                                  <span class="error" *ngIf="ph.touched && ph.invalid">
                                   Phone number should be 10 digits

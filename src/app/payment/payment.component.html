@@ -1,0 +1,81 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                   <h2 style="text-align: center;">Credit Card Details</h2> 
+                </div>
+                <div class="card-body">
+                    <form #frmPay="ngForm">
+                    <table class="table table-light">
+                        <tr>
+                            <td style="text-align: center;">
+                               <h5>Card Number:</h5> 
+                            </td>
+                            <td>
+                                <input type="text" class="form-control" name="cardno" minlength="16" maxlength="16" pattern="[0-9]*" [(ngModel)]="cardno" #cardn="ngModel" required/>
+                                <br/>
+                                <span class="error" *ngIf="cardn.touched && cardn.invalid">
+                                    Invalid Credit Card Number
+                                </span>
+                                <br/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center;">
+                               <h5>Expiry Date:</h5> 
+                            </td>
+                            <td>
+                                <input type="date" class="form-control" name="date"  [(ngModel)]="date" #datee="ngModel" required/>
+                                <br/>
+                                <span class="error" *ngIf="datee.touched && datee.invalid">
+                                    Please Enter Expiry date
+                                </span>
+                                <br/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center;">
+                               <h5>C V V:</h5> 
+                            </td>
+                            <td>
+                                <input type="text" class="form-control" name="cvv" minlength="3" maxlength="3" pattern="[0-9]*" [(ngModel)]="cvv" #ccvv="ngModel" required/>
+                                <br/>
+                                <span class="error" *ngIf="ccvv.touched && ccvv.invalid">
+                                    Invalid cvv
+                                </span>
+                                <br/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center;">
+                               <h5>Password:</h5> 
+                            </td>
+                            <td>
+                                <input type="password" class="form-control" name="Password" minlength="4" maxlength="4" pattern="[0-9]*" [(ngModel)]="password" #pass="ngModel" required/>
+                                <br/>
+                                <span class="error" *ngIf="pass.touched && pass.invalid">
+                                    Invalid password
+                                </span>
+                                <br/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" style="text-align: center;">
+                                <input type="submit" value="Pay Amount" class="btn btn-danger" (click)="confirm()" [disabled]="frmPay.form.invalid" />
+                            </td>
+                        </tr>
+                    
+                    </table>
+                                
+                            
+                                
+                            
+                </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+</div>

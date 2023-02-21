@@ -10,6 +10,8 @@ import { HomeComponent } from './home/home.component';
 import { DemoComponent } from './demo/demo.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { DetailsComponent } from './details/details.component';
+import { PaymentComponent } from './payment/payment.component';
+import { ConfirmationComponent } from './confirmation/confirmation.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +20,8 @@ import { DetailsComponent } from './details/details.component';
     HomeComponent,
     DemoComponent,
     DetailsComponent,
+    PaymentComponent,
+    ConfirmationComponent,
     
   ],
   imports: [
