@@ -7,7 +7,7 @@ ol{
        in list */
     list-style: none;
     
-    position: absolute;
+    position: relative;
 }
 ol li{
      
@@ -16,17 +16,17 @@ ol li{
     float: left;
      
     /* Size of one list item */
-    width: 33.33%;
+    
 }
 
 .container {
-    padding-top: 50px;
-    padding-bottom: 10px;
-    color: #405065;
+    padding-top: 50%;
+    padding-bottom: 10%;
+    color: #2d425e;
   }
   
   .search-hero {
-    max-width: 500px;
+    width: 50%;
     padding-bottom: 50px;
     margin:auto;
   }

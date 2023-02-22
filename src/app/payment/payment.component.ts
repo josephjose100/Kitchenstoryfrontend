@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { PurchaseService } from '../purchase.service';
 
 @Component({
   selector: 'app-payment',
@@ -12,13 +13,18 @@ export class PaymentComponent implements OnInit {
   date:Date;
   cvv:string;
   password:number;
-  constructor(private router:Router) { }
+  pay:boolean=false;
+  con:boolean=true;
+  constructor(private router:Router,private purchaseservice:PurchaseService)  { }
 
   ngOnInit(): void {
+
+     this.pay=this.purchaseservice.getpay();
   }
 
   confirm()
   {
+    this.purchaseservice.setcon(this.con); 
      this.router.navigate([`confirm`]);
   }
 

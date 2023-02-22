@@ -12,7 +12,7 @@ import { PurchaseService } from '../purchase.service';
 export class HomeComponent implements OnInit {
 
   searchText;
- 
+  det:boolean=true;
 
 
 
@@ -53,6 +53,7 @@ export class HomeComponent implements OnInit {
   {
     this.purchaseservice.setItem(item);
     this.router.navigate(['details']);
+    this.purchaseservice.setdet(this.det);
 
     
   }

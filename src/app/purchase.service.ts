@@ -15,7 +15,47 @@ export class PurchaseService {
   phone:string="";
   email:string="";
   quantity:number;
+  det:boolean;
+  pay:boolean;
+  con:boolean;
+  
   constructor() { }
+   
+  setpay(pay:boolean)
+  {
+    this.pay=pay;
+  }
+
+  getpay()
+  {
+    return this.pay;
+  }
+
+  setcon(con:boolean)
+  {
+    this.con=con;
+  }
+
+  getcon()
+  {
+    return this.con;
+  }
+
+
+
+
+  setdet(det:boolean)
+  {
+    this.det=det;
+  }
+
+  getdet()
+  {
+    return this.det;
+  }
+
+
+
   setItem(item:Item)
   {
    this.item=item;

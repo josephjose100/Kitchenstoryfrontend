@@ -23,9 +23,11 @@ export class DetailsComponent implements OnInit {
   phone:string="";
   email:string="";
   message:string;
+  det:boolean=false;
+  pay:boolean=true;
   ngOnInit(): void {
     this.item=this.purchaseserice.getItem();
-    
+    this.det=this.purchaseserice.getdet();
   }
   total()
   {
@@ -50,6 +52,7 @@ export class DetailsComponent implements OnInit {
          this.purchaseserice.setphone(this.phone);
          this.purchaseserice.setemail(this.email);
          this.purchaseserice.setquantity(this.quantity);
+         this.purchaseserice.setpay(this.pay);
          this.router.navigate([`payment`]);
 
       }

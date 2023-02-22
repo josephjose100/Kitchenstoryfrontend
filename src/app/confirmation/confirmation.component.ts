@@ -20,6 +20,7 @@ export class ConfirmationComponent implements OnInit {
   pincode:string="";
   phone:string="";
   email:string="";
+  con:boolean=false;
   constructor(private purchaseservice:PurchaseService) { }
 
   ngOnInit(): void {
@@ -33,6 +34,7 @@ export class ConfirmationComponent implements OnInit {
     this.pincode=this.purchaseservice.getpincode();
     this.phone=this.purchaseservice.getphone();
     this.email=this.purchaseservice.getemail();
+    this.con=this.purchaseservice.getcon();
 
   }
 
