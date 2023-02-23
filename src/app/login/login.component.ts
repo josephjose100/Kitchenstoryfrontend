@@ -84,6 +84,9 @@ export class LoginComponent implements OnInit {
     this.adminservice.AddItem(this.newItem).subscribe(data =>{
       this.getAllItems();
     })
+    this.newItem.pName="";
+    this.newItem.pCategory="";
+    this.newItem.price=0;
 
 
   }
@@ -100,9 +103,14 @@ export class LoginComponent implements OnInit {
       {
         this.pAdmin.adminPassword=this.newPassword1;
         this.message="password changed successfully";
+        
        this.adminservice.ChangePassword(this.pAdmin).subscribe(data =>{
         this.getAllItems();
+       
        });
+       this.oldPassword="";
+       this.newPassword1="";
+       this.newPassword2="";
       }
       else
       {
